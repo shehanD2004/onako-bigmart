@@ -1,3 +1,6 @@
+import React from 'react';
+import { useState } from 'react';
+
 const StatusStepper = ({ currentStatus }) => {
   const steps = ['Received', 'Packing', 'Ready', 'Out for Delivery', 'Delivered'];
   const currentIndex = steps.indexOf(currentStatus);
@@ -26,3 +29,5 @@ const StatusStepper = ({ currentStatus }) => {
     </div>
   );
 };
+
+export default StatusStepper;
