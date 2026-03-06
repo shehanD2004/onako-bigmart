@@ -1,17 +1,20 @@
 const mongoose = require('mongoose');
 
 const deliverySchema = new mongoose.Schema({
-  purchaseOrder: { type: mongoose.Schema.Types.ObjectId, ref: 'PurchaseOrder', required: true },
-  deliveryDate: { type: Date, default: Date.now },
-  receivedBy: String,
+  supplier: { type: mongoose.Schema.Types.ObjectId, ref: 'Supplier', required: true },
+  deliveryDate: { type: Date, required: true },
+  receivedQuantities: { type: Number },
+  receivedBy: { type: String },
   items: [{
-    product: { type: mongoose.Schema.Types.ObjectId, ref: 'Product', required: true },
-    quantityReceived: { type: Number, required: true, min: 0 },
-    condition: String,   // e.g., "good", "damaged"
-    notes: String
+    product: { type: String },
+    quantityReceived: { type: Number, default: 0 },
+    condition: { type: String, enum: ['good', 'damaged', 'partial'], default: 'good' },
+    notes: { type: String },
   }],
   status: { type: String, enum: ['pending', 'completed', 'partial'], default: 'pending' },
-  notes: String,
-}, { timestamps: true });
+  qualityNotes: { type: String },
+  notes: { type: String },
+  createdAt: { type: Date, default: Date.now },
+});
 
 module.exports = mongoose.model('Delivery', deliverySchema);
