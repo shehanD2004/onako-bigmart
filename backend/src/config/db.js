@@ -1,14 +1,14 @@
 const mongoose = require('mongoose');
+const { MONGO_URI } = require('./env');
 
 const connectDB = async () => {
-    try {
-        const conn = await mongoose.connect(process.env.MONGO_URI);
-
-        console.log(`MongoDB Connected: ${conn.connection.host}`);
-    }catch (error){
-        console.error("Database connection failed:", error.message);
-        process.exit(1); // Stop server if DB fails
-    }
+  try {
+    await mongoose.connect(MONGO_URI);
+    console.log("✅ MongoDB Atlas Connected: Onako Big Mart Cluster");
+  } catch (err) {
+    console.error("❌ Database Connection Failed:", err.message);
+    process.exit(1);
+  }
 };
 
 module.exports = connectDB;
