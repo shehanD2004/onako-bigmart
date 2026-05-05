@@ -256,14 +256,6 @@ http://localhost:5000/api
 - npm or yarn
 - MongoDB Atlas account (with active cluster)
 
-### Environment Setup
-
-**Backend (.env or hardcoded in db.js):**
-```
-MONGODB_URI=mongodb+srv://dshehan588_db_user:Bigmart@onako-bigmart-cluster.vx74f7.mongodb.net
-PORT=5000
-```
-
 ### Start Development Servers
 
 **Terminal 1 - Backend:**
