@@ -3,7 +3,7 @@ const Order = require('./src/models/Order');
 const Staff = require('./src/models/Staff');
 
 // Connection String
-const MONGO_URI = 'mongodb+srv://dshehan588_db_user:Bigmart@onako-bigmart-cluster.vx74f7.mongodb.net/?appName=onako-bigmart-cluster';
+const MONGO_URI = 'Enter your URI';
 
 const seedData = async () => {
   try {
