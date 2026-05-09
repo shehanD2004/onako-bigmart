@@ -56,10 +56,6 @@ The Procurement & Inventory Management System (BigMart) is a full-stack MERN app
 
 ### Database
 - **Provider**: MongoDB Atlas
-- **Connection String**: `mongodb+srv://dshehan588_db_user:Bigmart@onako-bigmart-cluster.vx74f7.mongodb.net`
-- **Database**: Auto-selection from connection string
-
----
 
 ## Project Structure
 
